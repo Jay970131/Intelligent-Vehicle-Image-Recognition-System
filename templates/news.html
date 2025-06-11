@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>最新消息 - AutoBrand 識車系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mobile-style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <h1>AutoBrand 識車系統</h1>
+        <!-- ☰ 漢堡按鈕 -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="{{ url_for('index') }}">首頁</a></li>
+                <li><a href="{{ url_for('news') }}">最新消息</a></li>
+                <li><a href="{{ url_for('about') }}">關於我們</a></li>
+                <li><a href="{{ url_for('upload') }}">上傳照片</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>最新消息</h2>
+        <p>目前尚無最新消息。</p>
+    </main>
+    <footer>
+        <p>© 2025 AutoBrand 識車系統</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

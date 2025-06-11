@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>上傳照片 - AutoBrand 識車系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mobile-style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <h1>AutoBrand 識車系統</h1>
+        <!-- ☰ 漢堡按鈕 -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="{{ url_for('index') }}">首頁</a></li>
+                <li><a href="{{ url_for('news') }}">最新消息</a></li>
+                <li><a href="{{ url_for('about') }}">關於我們</a></li>
+                <li><a href="{{ url_for('upload') }}">上傳照片</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <form id="uploadForm" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="upload-container">
+            <div class="upload-box" id="uploadBox">
+                <img src="{{ url_for('static', filename='icons/upload.png') }}" alt="Upload" class="upload-icon" />
+                <p>請選擇一張圖片進行掃描</p>
+                <label id="uploadLabel" for="fileInput" class="custom-upload-button">選擇檔案</label>
+                <input type="file" id="fileInput" name="file" style="display: none;" required />
+                <button type="button" id="scanButton" style="display: none;">進行掃描</button>
+            </div>
+        </form>
+
+        <!-- 顯示辨識結果 -->
+        {% if result %}
+        <script>
+        showModal("辨識結果：{{ result }}");
+        </script>
+        {% endif %}
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <script>
+        showModal("{{ messages[0] }}");
+        </script>
+        {% endif %}
+        {% endwith %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 AutoBrand 識車系統</p>
+    </footer>
+
+    <!-- Modal for result -->
+    <div id="resultModal" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:9999; justify-content:center; align-items:center;">
+        <div id="resultModalContent" style="background:#fff; padding:32px 48px; border-radius:16px; font-size:20px; color:#273442; box-shadow:0 2px 16px rgba(39,52,66,0.12); text-align:center;">
+        </div>
+    </div>
+
+    <!-- 引入外部 JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

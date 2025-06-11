@@ -1,0 +1,253 @@
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Header 區域 */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: auto;
+    padding: 10px;
+  }
+
+  /* 導覽選單按鈕 */
+  header nav ul {
+    display: flex;
+    flex-direction: column; /* 改為直式排列 */
+    align-items: center; /* 水平置中 */
+    padding: 0;
+    margin: 0 auto; /* 置中 */
+    width: 90%; /* 縮短選單寬度 */
+    box-sizing: border-box; /* 包含邊框和內距 */
+  }
+
+  header nav ul li {
+    width: 100%;
+    margin: 5px 0;
+    text-align: center; /* 置中對齊 */
+  }
+
+  header nav ul li a {
+    font-size: 14px;
+    padding: 10px 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hamburger {
+    display: block; /* 顯示漢堡選單 */
+  }
+
+  /* 導覽列預設隱藏，點擊後加上 active 才顯示 */
+  #navMenu ul {
+    display: none; /* 預設隱藏選單 */
+    flex-direction: column;
+    background-color: #f9f6e7;
+    width: 100%; /* 縮短選單寬度 */
+    height: 100vh; /* 占滿螢幕高度 */
+    position: fixed;
+    top: 0;
+    left: 0; /* 讓選單置中 */
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  /* 展開選單時的樣式 */
+  #navMenu ul.active {
+    display: flex;
+    background-color: #f9f6e7; /* 背景色 */
+  }
+
+  #navMenu ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  #navMenu ul li a {
+    font-size: 18px; /* 調整字體大小 */
+    padding: 10px 16px; /* 調整內距 */
+    text-decoration: none; /* 移除底線 */
+    color: #273442; /* 調整文字顏色 */
+    display: block; /* 占滿寬度 */
+  }
+
+  #navMenu ul li a:hover {
+    background-color: #f7cb5f; /* 添加 hover 效果 */
+    color: #ffffff; /* 調整文字顏色 */
+  }
+
+  /* Main 區域調整 */
+  main {
+    margin-top: 170px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  main h2, main p {
+    text-align: center; /* 確保標題和段落文字置中 */
+  }
+
+  /* 操作流程區塊 */
+   #process-container {
+    flex-direction: column; /* 改為直式排列 */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .arrow-icon {
+    flex-direction: column; /* 改為上下排列 */
+    margin: 10px 0;
+  }
+
+  .arrow-image {
+    transform: rotate(90deg); /* 向下箭頭 */
+    width: 60px;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .process-step {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  
+  /* 上傳區塊 */
+  .upload-box {
+    width: 90%;
+    padding: 40px 20px;
+    margin: 20px auto;
+  }
+
+  .custom-upload-button {
+    width: 60%;
+    font-size: 14px;
+    height: 44px;
+  }
+
+
+  #scanButton {
+    width: 60%;
+    height: 44px;
+    font-size: 14px;
+  }
+
+
+  /* slogan 圖片縮小 */
+  .slogan-container {
+    position: relative;
+    top: -90px; /* 手動調整，看起來剛好接在 header 下方 */
+    width: 100vw;
+    z-index: 999;
+
+  }
+
+  /* Footer 調整 */
+  footer {
+    position: static;
+    height: auto;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+
+  /* Services Section */
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+    padding: 0;
+  }
+
+
+  .service-item {
+    max-width: 350px; /* 最大寬度限制 */
+    margin-bottom: 20px; /* 調整底部間距 */
+    margin-top: 0;
+    padding: 16px 8px; /* 調整內距 */
+    height: auto; /* 自動調整高度 */
+  }
+
+  .service-icon {
+    width: 80%; /* 調整圖片大小 */
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /* 關於我們 - 支援辨識的汽車廠牌 */
+  #best-sellers {
+    text-align: center;
+    font-size: medium; /* 調整字體大小 */
+    width: 90%; /* 縮短寬度 */
+    margin: 0 auto; /* 置中 */
+  }
+
+  #best-sellers h2 {
+    font-size: 24px; /* 調整字體大小 */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #f9d67b;
+    border-radius: 10px;
+    padding: 20px; /* 調整內距 */
+  }
+
+  .car-brands1,
+  .car-brands2 {
+    font-size: 1em; /* 調整字體大小 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    word-break: break-word; /* 確保文字不超出容器 */
+    white-space: normal;
+  }
+
+  /* 關於我們 - 團隊成員 */
+  #team {
+    text-align: center;
+    font-size: medium; /* 調整字體大小 */
+    width: 90%; /* 縮短寬度 */
+    margin: 0 auto; /* 置中 */
+  }
+
+  #team h2 {
+    font-size: 24px; /* 調整字體大小 */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #f9d67b;
+    border-radius: 10px;
+    padding: 20px; /* 調整內距 */
+  }
+
+  .team-member {
+    display: flex;
+    flex-wrap: wrap; /* 允許換行 */
+    justify-content: center; /* 水平置中 */
+    gap: 20px; /* 調整間距 */
+    margin: 0 auto; /* 置中 */
+    max-width: 100%; /* 占滿寬度 */
+    padding-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .member {
+    background: #f9f6e7;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(39,52,66,0.08);
+    padding: 16px 12px;
+    text-align: center;
+    width: 200px; /* 調整寬度 */
+    flex: 1 1 200px; /* 自動調整寬度 */
+    max-width: 200px;
+  }
+
+  .member-photo {
+    width: 80px; /* 調整圖片大小 */
+    height: 80px;
+    margin-bottom: 10px;
+  }
+}

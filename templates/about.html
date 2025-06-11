@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>關於我們 - AutoBrand 識車系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mobile-style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        main {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              color: #273442;
+              margin: 30px;
+              padding-top: 200px; /* header 高度 */
+              box-sizing: border-box;
+             }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AutoBrand 識車系統</h1>
+        <!-- ☰ 漢堡按鈕 -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="{{ url_for('index') }}">首頁</a></li>
+                <li><a href="{{ url_for('news') }}">最新消息</a></li>
+                <li><a href="{{ url_for('about') }}">關於我們</a></li>
+                <li><a href="{{ url_for('upload') }}">上傳照片</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+         <section id="services">
+          <h2>服務介紹</h2>
+    <div class="services-list">
+        <div class="service-item">
+            <img src="{{ url_for('static', filename='icons/Ai Decision.gif') }}" alt="AI辨識" class="service-icon">
+            <p class="service-text"><b>AI 車輛品牌自動辨識</b></p>
+        </div>
+        <div class="service-item">
+            <img src="{{ url_for('static', filename='icons/Ai Analysis.gif') }}" alt="資料查詢" class="service-icon">
+            <p class="service-text"><b>車輛資料查詢與管理</b></p>
+        </div>
+        <div class="service-item">
+            <img src="{{ url_for('static', filename='icons/Ai Service.gif') }}" alt="技術支援" class="service-icon">
+            <p class="service-text"><b>技術支援與諮詢服務</b></p>
+        </div>
+    </div>
+         </section>
+
+         <section id="best-sellers">
+         <h2>支援識別的車款</h2>
+         <p class="car-brands1"><b>TOYOTA、BMW、MG、CNC、Mercedes-Benz</b></p>
+         <p class="car-brands2"><b>Tesla、Lexus、Honda、Ford、Hyundai</b></p>
+         </section>
+
+         <section id="team">
+         <h2>團隊成員</h2>
+
+         <div class="team-members">
+         <div class="member">
+            <img src="{{ url_for('static', filename='icons/girl.svg') }}" alt="成員1" class="member-photo">
+            <h3>高嘉謙(組長)</h3>
+            <p>前端開發 / 資料彙整</p>
+         </div>
+         <div class="member">
+            <img src="{{ url_for('static', filename='icons/boy.svg') }}" alt="成員2" class="member-photo">
+            <h3>闕士傑</h3>
+            <p>資料前處理 / 文件會整</p>
+         </div>
+         <div class="member">
+            <img src="{{ url_for('static', filename='icons/girl.svg') }}" alt="成員3" class="member-photo">
+            <h3>陳奕臻</h3>
+            <p>UI設計 / 前端開發</p>
+         </div>
+         <div class="member">
+            <img src="{{ url_for('static', filename='icons/boy.svg') }}" alt="成員4" class="member-photo">
+            <h3>林勤軒</h3>
+            <p>後端程式 / 模型訓練</p>
+         </div>
+         <div class="member">
+            <img src="{{ url_for('static', filename='icons/boy.svg') }}" alt="成員5" class="member-photo">
+            <h3>陳孟志</h3>
+            <p>後端程式 / 模型訓練</p>
+         </div>
+         <div class="member">
+            <img src="{{ url_for('static', filename='icons/boy.svg') }}" alt="成員6" class="member-photo">
+            <h3>王克強</h3>
+            <p>資料彙整 / 評估</p>
+         </div>
+         </div>
+         </section>
+
+    </main>
+    <footer>
+        <p>© 2025 AutoBrand 識車系統</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
